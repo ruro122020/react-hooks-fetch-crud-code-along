@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Yogurt",
       "category": "Dairy",
-      "isInCart": true
+      "isInCart": false
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "id": 3,
       "name": "Lettuce",
       "category": "Produce",
-      "isInCart": true
+      "isInCart": false
     },
     {
       "id": 4,

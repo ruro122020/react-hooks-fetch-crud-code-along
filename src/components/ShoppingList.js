@@ -13,6 +13,8 @@ function ShoppingList() {
     .then(res => res.json())
     .then(items => setItems(items))
   },[])
+
+  //Callback Function
   function handleCategoryChange(category) {
     setSelectedCategory(category);
   }
@@ -20,6 +22,17 @@ function ShoppingList() {
   function handleAddItem (newItem){
     setItems(prevItems => [...prevItems, newItem])
   }
+  function handleUpdateItem (updateItem){
+    const updatedItem = items.map(item => {
+      if(item.id === updateItem.id){
+        return updateItem
+      }else{
+        return item
+      }
+    })
+    setItems(updatedItem)
+  }
+  //Iteration through Items to display in DOM
   const itemsToDisplay = items.filter((item) => {
     if (selectedCategory === "All") return true;
 
@@ -35,7 +48,11 @@ function ShoppingList() {
       />
       <ul className="Items">
         {itemsToDisplay.map((item) => (
-          <Item key={item.id} item={item} />
+          <Item 
+          key={item.id} 
+          item={item} 
+          onUpdateItem={handleUpdateItem}
+          />
         ))}
       </ul>
     </div>
