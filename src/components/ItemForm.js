@@ -20,7 +20,8 @@ function ItemForm({onAddItem}) {
     })
     .then(res => res.json())
     .then(newItem => onAddItem(newItem))
-
+    setName('')
+    setCategory('')
   }
 
   return (

@@ -32,6 +32,10 @@ function ShoppingList() {
     })
     setItems(updatedItem)
   }
+  function handleDeleteItem(deleteItem){
+    const deletedItems = items.filter(item=> item.id !== deleteItem.id)
+    setItems(deletedItems)
+  }
   //Iteration through Items to display in DOM
   const itemsToDisplay = items.filter((item) => {
     if (selectedCategory === "All") return true;
@@ -52,6 +56,7 @@ function ShoppingList() {
           key={item.id} 
           item={item} 
           onUpdateItem={handleUpdateItem}
+          onDeleteItem={handleDeleteItem}
           />
         ))}
       </ul>

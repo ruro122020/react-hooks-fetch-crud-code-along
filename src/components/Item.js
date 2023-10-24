@@ -1,6 +1,6 @@
 import React from "react";
 
-function Item({ item, onUpdateItem }) {
+function Item({ item, onUpdateItem, onDeleteItem }) {
 
   //Fetch Request
   function handleAddToCartClick() {
@@ -22,7 +22,7 @@ function Item({ item, onUpdateItem }) {
       method:'DELETE'
     })
     .then(res => res.json())
-    .then(data => console.log('Deleted!'))
+    .then(data => onDeleteItem(item))
   }
   return (
     <li className={item.isInCart ? "in-cart" : ""}>
