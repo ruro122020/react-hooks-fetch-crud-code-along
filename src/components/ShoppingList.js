@@ -14,7 +14,7 @@ function ShoppingList() {
     .then(items => setItems(items))
   },[])
 
-  //Callback Function
+  //Functions Used in Child Components
   function handleCategoryChange(category) {
     setSelectedCategory(category);
   }
